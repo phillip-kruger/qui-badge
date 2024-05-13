@@ -2,9 +2,6 @@
   <head>
     <title>Badge web component demo</title>
     <script type="module" src="./qui-badge.js"></script>
-    <script type="module">
-        import '@vaadin/icon';
-    </script>
     <style>
         .cards {
             display: flex;
@@ -59,34 +56,34 @@
         
         <h3>With Icon</h3>
         <div class="card">
-            <qui-badge text="Default" icon="info-circle">
+            <qui-badge text="Default" icon="circle-info">
                 <span>Default icon</span>
             </qui-badge>
-            <qui-badge text="Success" level="success" icon="vaadin:check-circle">
+            <qui-badge text="Success" level="success" icon="circle-check">
                 <span>Success icon</span>
             </qui-badge>
-            <qui-badge text="Warning" level="warning" icon="vaadin:warning">
+            <qui-badge text="Warning" level="warning" icon="warning">
                 <span>Warning icon</span>
             </qui-badge>
-            <qui-badge text="Error" level="error" icon="vaadin:exclamation-circle">
+            <qui-badge text="Error" level="error" icon="circle-exclamation">
                 <span>Error icon</span>
             </qui-badge>
-            <qui-badge text="Contrast" level="contrast" icon="vaadin:adjust">
+            <qui-badge text="Contrast" level="contrast" icon="adjust">
                 <span>Contrast icon</span>
             </qui-badge>
-            <qui-badge text="Custom" background="pink" color="purple" icon="vaadin:flag-checkered">
+            <qui-badge text="Custom" background="pink" color="purple" icon="flag-checkered">
                 <span>Custom colors</span>
             </qui-badge>
         </div>
 
         <h3>Icon only</h3>
         <div class="card">
-            <qui-badge icon="vaadin:info-circle"></qui-badge>
-            <qui-badge level="success" icon="vaadin:check-circle"></qui-badge>
-            <qui-badge level="warning" icon="vaadin:warning"></qui-badge>
-            <qui-badge level="error" icon="vaadin:exclamation-circle"></qui-badge>
-            <qui-badge level="contrast" icon="vaadin:adjust"></qui-badge>
-            <qui-badge level="contrast" background="pink" color="purple" icon="vaadin:flag-checkered"></qui-badge>
+            <qui-badge icon="circle-info"></qui-badge>
+            <qui-badge level="success" icon="circle-check"></qui-badge>
+            <qui-badge level="warning" icon="warning"></qui-badge>
+            <qui-badge level="error" icon="circle-exclamation"></qui-badge>
+            <qui-badge level="contrast" icon="adjust"></qui-badge>
+            <qui-badge level="contrast" background="pink" color="purple" icon="flag-checkered"></qui-badge>
         </div>
 
         <h3>Clickable</h3>
