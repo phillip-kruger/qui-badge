@@ -1,5 +1,5 @@
 import { LitElement, html, css} from 'lit';
-import '@vaadin/icon';
+import '@qomponent/qui-icons';
 
 /**
  * Badge UI Component based on the vaadin theme one
@@ -148,7 +148,7 @@ export class QuiBadge extends LitElement {
 
     _renderIcon(){
         if(this.icon){
-            return html`<vaadin-icon icon='${this.icon}' style='padding: var(--lumo-space-xs, 0.25rem);'></vaadin-icon>`;
+            return html`<fas-icon icon="${this.icon}" size="tiny" style='padding: var(--lumo-space-xs, 0.25rem);'></fas-icon>`;
         }
     }
 
