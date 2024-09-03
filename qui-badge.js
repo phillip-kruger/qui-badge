@@ -104,8 +104,13 @@ export class QuiBadge extends LitElement {
     }
 
     connectedCallback() {
-        super.connectedCallback()
-        
+        super.connectedCallback();
+        this._resetTheme();
+        this._resetStyle();
+    }
+
+    _resetTheme() {
+        this._theme = "badge";
         if(this.level){
             this._theme = this._theme + " " + this.level;
         }
@@ -116,18 +121,21 @@ export class QuiBadge extends LitElement {
                 this._theme = this._theme + " primary";
             }
         }
-        
+
         if(this.small && !this.tiny){
             this._theme = this._theme + " small";
         }
         if(this.tiny){
             this._theme = this._theme + " tiny";
         }
-        
+
         if(this.pill){
             this._theme = this._theme + " pill";
         }
-        
+    }
+
+    _resetStyle() {
+        this._style = "";
         if(this.background){
             this._style = this._style + "background: " + this.background + ";";
         }
@@ -137,8 +145,17 @@ export class QuiBadge extends LitElement {
         if(this.clickable){
             this._style = this._style + "cursor: pointer";
         }
-      }
-      
+    }
+
+    update(changedProperties) {
+        this._resetTheme();
+        this._resetStyle();
+
+        // this will invoke re-rendering
+        super.update(changedProperties);
+    }
+
+
     render() {
         return html`<span theme='${this._theme}' style='${this._style}'>
                 ${this._renderIcon()}
