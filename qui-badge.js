@@ -77,6 +77,7 @@ export class QuiBadge extends LitElement {
     static properties = {
         background: {type: String},
         color: {type: String},
+        size: {type: String},
         icon: {type: String},
         level: {type: String},
         small: {type: Boolean},
@@ -95,10 +96,11 @@ export class QuiBadge extends LitElement {
         this.background = null;
         this.color = null;
         this.small = false;
+        this.tiny = false;
         this.primary = false;
         this.pill = false;
         this.clickable = false;
-        
+        this.size = null;
         this._theme = "badge";
         this._style = "";
     }
@@ -124,9 +126,14 @@ export class QuiBadge extends LitElement {
 
         if(this.small && !this.tiny){
             this._theme = this._theme + " small";
+            this.size = "small";
         }
         if(this.tiny){
             this._theme = this._theme + " tiny";
+            this.size = "tiny";
+        }
+        if(!this.tiny && !this.small && this.size){
+            this._theme = this._theme + " " + this.size;
         }
 
         if(this.pill){
@@ -165,7 +172,7 @@ export class QuiBadge extends LitElement {
 
     _renderIcon(){
         if(this.icon){
-            return html`<fas-icon icon="${this.icon}" size="tiny" style='padding: var(--lumo-space-xs, 0.25rem);'></fas-icon>`;
+            return html`<fas-icon icon="${this.icon}" size="${this.size}" style='padding: var(--lumo-space-xs, 0.25rem);'></fas-icon>`;
         }
     }
 
