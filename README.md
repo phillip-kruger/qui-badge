@@ -11,7 +11,7 @@ npm i @qomponent/qui-badge
 ## Usage
 
 ```javascript
-import 'qui-badge';
+import '@qomponent/qui-badge';
 ```
 
 ```html
